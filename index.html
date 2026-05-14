@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Video Player</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+
+      background:
+        radial-gradient(circle at top,
+        #14532d 0%,
+        #052e16 45%,
+        #02110a 100%);
+    }
+
+    .video-container {
+      width: 95%;
+      max-width: 1200px;
+      border-radius: 22px;
+      overflow: hidden;
+
+      box-shadow:
+        0 0 40px rgba(0,0,0,0.5),
+        0 0 80px rgba(34,197,94,0.25);
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: black;
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 0;
+      }
+
+      .video-container {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+      }
+
+      video {
+        width: 100%;
+        height: 100vh;
+        object-fit: contain;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="video-container">
+
+    <video
+      controls
+      autoplay
+      playsinline
+      preload="auto"
+    >
+      <source src="Video.mp4" type="video/mp4">
+
+      Your browser does not support HTML5 video.
+    </video>
+
+  </div>
+
+</body>
+</html>
